@@ -11,6 +11,10 @@ RUN apt-get update && \
       xorg xauth x11-xkb-utils \
       # fallback backend for reliability
       tigervnc-standalone-server \
+      # browser
+      firefox-esr \
+      # for cert generation in entrypoint
+      openssl \
     && rm -rf /var/lib/apt/lists/*
 
 # locale
