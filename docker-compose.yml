@@ -14,7 +14,6 @@ services:
       - LC_ALL=zh_CN.UTF-8
     volumes:
       - ./xrdp-lxqt:/opt/xrdp-lxqt:rw
-      - xrdp_home:/home
     user: "0:0"
 
 volumes:
