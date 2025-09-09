@@ -8,13 +8,8 @@ XRDP_USER="${XRDP_USER:-rdpuser}"
 XRDP_PASSWORD="${XRDP_PASSWORD:-rdpuser}"
 LANG="${LANG:-zh_CN.UTF-8}"
 LC_ALL="${LC_ALL:-zh_CN.UTF-8}"
-TZ="${TZ:-Asia/Shanghai}"
 
-export LANG LC_ALL TZ DEBIAN_FRONTEND=noninteractive
-
-# timezone
-ln -sf "/usr/share/zoneinfo/${TZ}" /etc/localtime || true
-echo "${TZ}" > /etc/timezone || true
+export LANG LC_ALL DEBIAN_FRONTEND=noninteractive
 
 # user
 if ! id -u "${XRDP_USER}" >/dev/null 2>&1; then
