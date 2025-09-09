@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=LXQt Notification Daemon (disabled)
+Exec=lxqt-notificationd
+OnlyShowIn=LXQt;
+X-LXQt-Module=true
+NoDisplay=true
+Hidden=true

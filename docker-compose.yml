@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  xrdp-lxqt:
+    build:
+      context: ./xrdp-lxqt
+      dockerfile: Dockerfile
+    container_name: xrdp-lxqt
+    ports:
+      - "3389:3389"
+    environment:
+      - XRDP_USER=rdpuser
+      - XRDP_PASSWORD=Aa123456
+      - LANG=zh_CN.UTF-8
+      - LC_ALL=zh_CN.UTF-8
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./xrdp-lxqt:/opt/xrdp-lxqt:rw
+      - xrdp_home:/home
+    user: "0:0"
+
+volumes:
+  xrdp_home:
