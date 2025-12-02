@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=LXQt Power Management (disabled)
-Exec=lxqt-powermanagement
-OnlyShowIn=LXQt;
-X-LXQt-Module=true
-NoDisplay=true
-Hidden=true

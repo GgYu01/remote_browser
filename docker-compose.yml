@@ -1,20 +1,21 @@
-version: "3.9"
+version: '3.8'
 services:
-  xrdp-lxqt:
-    build:
-      context: ./xrdp-lxqt
-      dockerfile: Dockerfile
-    container_name: xrdp-lxqt
+  browser-rbi:
+    build: .
+    image: remote-browser:latest
+    container_name: rbi_container
+    # 关键：共享宿主机内存空间，避免容器内 OOM 限制过严
+    shm_size: '1gb'
     ports:
       - "3389:3389"
-    environment:
-      - XRDP_USER=rdpuser
-      - XRDP_PASSWORD=Aa123456
-      - LANG=zh_CN.UTF-8
-      - LC_ALL=zh_CN.UTF-8
-    volumes:
-      - ./xrdp-lxqt:/opt/xrdp-lxqt:rw
-    user: "0:0"
-
-volumes:
-  xrdp_home:
+    restart: always
+    # 资源限制（可选，但在 1C1G 机器上可以不写，让它抢占所有资源）
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 900M
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - seccomp=unconfined

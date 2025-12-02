@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=LXQt PolicyKit Agent (disabled)
-Exec=lxqt-policykit-agent
-OnlyShowIn=LXQt;
-X-LXQt-Module=true
-NoDisplay=true
-Hidden=true
